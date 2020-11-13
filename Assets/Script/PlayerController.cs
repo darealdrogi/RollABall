@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -12,12 +13,20 @@ public class PlayerController : MonoBehaviour
     private float m_movementX;
     private float m_movementY;
 
+    private int m_collectablesTotalCount, m_collectablesCounter;
+
+    private Stopwatch m_stopwatch;
+
 
 
     // Start is called before the first frame update
     private void Start()
     {
         m_playerRigidbody = GetComponent<Rigidbody>();
+
+        m_collectablesTotalCount = m_collectablesCounter = GameObject.findGameObjectWithTag("Collactable").Length;
+
+        m_stopWatch = Stopwatch.StartNew();
     }
 
     private void OnMove(InputValue inputValue)
@@ -42,6 +51,32 @@ public class PlayerController : MonoBehaviour
         if(other.gameObject.CompareTag("Collectable"))
         {
             other.gameObject.SetActive(false);
+
+            m_collectablesCounter--;
+            if(m_collectablesCounter == 0)
+            { UnityEngine.Debug.Log("YOU WIN!");
+                UnityEngine.Debug.Log($"It took you {m_stopwatch.Elapsed} to find all {m_collectablesTotalCount} collectables.");
+
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.ExitPlaymode();
+#endif
+
+            }
+
+            else
+            {
+                UnityEngine.Debug.Log($"You've already found {m_collectablesTotalCount - m_collectablesCounter} of {m_collectablesTotalCount} collectables.);
+            }
+
+
+        }
+        else if(other.gameObject.CompareTag("Enemy"))
+        {
+            UnityEngine.Debug.Log("GAME OVER!");
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.ExitPlaymode();
+#endif
+            
         }
     }
 }
