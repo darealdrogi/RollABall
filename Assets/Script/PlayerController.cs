@@ -24,9 +24,9 @@ public class PlayerController : MonoBehaviour
     {
         m_playerRigidbody = GetComponent<Rigidbody>();
 
-        m_collectablesTotalCount = m_collectablesCounter = GameObject.findGameObjectWithTag("Collactable").Length;
+        m_collectablesTotalCount = m_collectablesCounter = GameObject.FindGameObjectsWithTag("Collactable").Length;
 
-        m_stopWatch = Stopwatch.StartNew();
+        m_stopwatch = Stopwatch.StartNew();
     }
 
     private void OnMove(InputValue inputValue)
@@ -65,7 +65,7 @@ public class PlayerController : MonoBehaviour
 
             else
             {
-                UnityEngine.Debug.Log($"You've already found {m_collectablesTotalCount - m_collectablesCounter} of {m_collectablesTotalCount} collectables.);
+                UnityEngine.Debug.Log($"You've already found {m_collectablesTotalCount - m_collectablesCounter} of {m_collectablesTotalCount} collectables.");
             }
 
 

@@ -12,7 +12,7 @@ public class PatrollingEnemyController : EnemyController
     {
         Vector3 destination = m_wayPoints[m_wayPointIndex].position;
 
-    m_wayPoints: wayPointIndex = (m_wayPointIndex + 1) % m_wayPoints.Length;
+    m_wayPointIndex = (m_wayPointIndex + 1) % m_wayPoints.Length;
 
         return destination;
     }
