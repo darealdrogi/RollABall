@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -17,6 +18,9 @@ public class PlayerController : MonoBehaviour
 
     private Stopwatch m_stopwatch;
 
+    public Text scoreText;
+    public GameObject gameOverText;
+
 
 
     // Start is called before the first frame update
@@ -25,6 +29,8 @@ public class PlayerController : MonoBehaviour
         m_playerRigidbody = GetComponent<Rigidbody>();
 
         m_collectablesTotalCount = m_collectablesCounter = GameObject.FindGameObjectsWithTag("Collactable").Length;
+
+        scoreText.text = "Score: " + m_collectablesTotalCount.ToString() + " / " + m_collectablesTotalCount.ToString();
 
         m_stopwatch = Stopwatch.StartNew();
     }
@@ -53,13 +59,16 @@ public class PlayerController : MonoBehaviour
             other.gameObject.SetActive(false);
 
             m_collectablesCounter--;
-            if(m_collectablesCounter == 0)
-            { UnityEngine.Debug.Log("YOU WIN!");
+            scoreText.text = m_collectablesTotalCount.ToString();
+            if (m_collectablesCounter == 0)
+            {
+                UnityEngine.Debug.Log("YOU WIN!");
+                gameOverText.SetActive(true);
+                StartCoroutine(waitALittleBit());
+
                 UnityEngine.Debug.Log($"It took you {m_stopwatch.Elapsed} to find all {m_collectablesTotalCount} collectables.");
 
-#if UNITY_EDITOR
-            UnityEditor.EditorApplication.ExitPlaymode();
-#endif
+
 
             }
 
@@ -73,11 +82,22 @@ public class PlayerController : MonoBehaviour
         else if(other.gameObject.CompareTag("Enemy"))
         {
             UnityEngine.Debug.Log("GAME OVER!");
+            
+
 #if UNITY_EDITOR
             UnityEditor.EditorApplication.ExitPlaymode();
 #endif
             
         }
+    }
+
+    public IEnumerator waitALittleBit()
+    {
+        yield return new WaitForSeconds(5);
+
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.ExitPlaymode();
+#endif
     }
 }
 
