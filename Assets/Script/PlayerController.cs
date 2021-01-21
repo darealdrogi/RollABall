@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -9,10 +11,9 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float m_speed = 1f;
 
-    private Rigidbody m_playerRigidbody;
+    private Rigidbody m_playerRigidbody = null;
 
-    private float m_movementX;
-    private float m_movementY;
+    private float m_movementX, m_movementY;
 
     private int m_collectablesTotalCount, m_collectablesCounter;
 
@@ -21,14 +22,11 @@ public class PlayerController : MonoBehaviour
     public Text scoreText;
     public GameObject gameOverText;
 
-
-
-    // Start is called before the first frame update
     private void Start()
     {
         m_playerRigidbody = GetComponent<Rigidbody>();
 
-        m_collectablesTotalCount = m_collectablesCounter = GameObject.FindGameObjectsWithTag("Collactable").Length;
+        m_collectablesTotalCount = m_collectablesCounter = GameObject.FindGameObjectsWithTag("Collectable").Length;
 
         scoreText.text = "Score: " + m_collectablesTotalCount.ToString() + " / " + m_collectablesTotalCount.ToString();
 
@@ -39,11 +37,10 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 movementVector = inputValue.Get<Vector2>();
 
+
         m_movementX = movementVector.x;
         m_movementY = movementVector.y;
     }
-
-
 
     private void FixedUpdate()
     {
@@ -54,50 +51,45 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Collectable"))
+        if (other.gameObject.CompareTag("Collectable"))
         {
             other.gameObject.SetActive(false);
 
             m_collectablesCounter--;
-            scoreText.text = m_collectablesTotalCount.ToString();
+            scoreText.text = "Score: " + m_collectablesCounter.ToString() + " / " + m_collectablesTotalCount.ToString();
             if (m_collectablesCounter == 0)
             {
                 UnityEngine.Debug.Log("YOU WIN!");
                 gameOverText.SetActive(true);
                 StartCoroutine(waitALittleBit());
 
+
                 UnityEngine.Debug.Log($"It took you {m_stopwatch.Elapsed} to find all {m_collectablesTotalCount} collectables.");
 
-
-
             }
-
             else
             {
-                UnityEngine.Debug.Log($"You've already found {m_collectablesTotalCount - m_collectablesCounter} of {m_collectablesTotalCount} collectables.");
+                UnityEngine.Debug.Log($"You've already found {m_collectablesTotalCount - m_collectablesCounter} of {m_collectablesTotalCount} collectables!");
             }
-
-
         }
-        else if(other.gameObject.CompareTag("Enemy"))
+        else if (other.gameObject.CompareTag("Enemy"))
         {
             UnityEngine.Debug.Log("GAME OVER!");
-            
+
 
 #if UNITY_EDITOR
-            UnityEditor.EditorApplication.ExitPlaymode();
+        UnityEditor.EditorApplication.ExitPlaymode();//exits the playmode
 #endif
-            
         }
     }
 
     public IEnumerator waitALittleBit()
     {
         yield return new WaitForSeconds(5);
-
 #if UNITY_EDITOR
-            UnityEditor.EditorApplication.ExitPlaymode();
+        UnityEditor.EditorApplication.ExitPlaymode();//exits the playmode
 #endif
+
     }
 }
 
