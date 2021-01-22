@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody m_playerRigidbody = null;
 
-    private float m_movementX, m_movementY;
+    private float m_movementX, m_movementY; //input vector components
 
     private int m_collectablesTotalCount, m_collectablesCounter;
 
@@ -37,16 +37,17 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 movementVector = inputValue.Get<Vector2>();
 
-
+        //split input vector in its two components
         m_movementX = movementVector.x;
         m_movementY = movementVector.y;
     }
 
     private void FixedUpdate()
     {
-        Vector3 movement = new Vector3(m_movementX, 0f, m_movementY);
+        Vector3 movement = new Vector3(m_movementX, 0f, m_movementY); //translate the 2d vector into a 3d vector
+        
+        m_playerRigidbody.AddForce(movement * m_speed); //apply a force to the rigidbody
 
-        m_playerRigidbody.AddForce(movement * m_speed);
     }
 
     private void OnTriggerEnter(Collider other)
