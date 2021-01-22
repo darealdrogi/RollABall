@@ -15,9 +15,9 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
   m_Fog: 1
-  m_FogColor: {r: 0.3207547, g: 0.3207547, b: 0.3207547, a: 1}
+  m_FogColor: {r: 0.009522955, g: 0.013984738, b: 0.01886791, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.03
+  m_FogDensity: 0.2
   m_LinearFogStart: 1.47
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.009656457, g: 0.028450219, b: 0.066037714, a: 1}
@@ -28,7 +28,7 @@ RenderSettings:
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: 84837f151d1ff2e43979ff49a85aa59c, type: 2}
   m_HaloStrength: 0.91
-  m_FlareStrength: 0.081
+  m_FlareStrength: 0.099
   m_FlareFadeSpeed: 0
   m_HaloTexture: {fileID: 0}
   m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
@@ -360,7 +360,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 6.45
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -416,13 +416,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 92004663}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: -17.928625, y: -1.5511584, z: 27.137428}
+  m_LocalRotation: {x: 0.3940148, y: -0.2577147, z: 0.058727227, w: 0.8802765}
+  m_LocalPosition: {x: -17.928625, y: -0.93, z: 27.137428}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 18
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 46.382004, y: -36.201, z: -8.309}
 --- !u!1 &95254686
 GameObject:
   m_ObjectHideFlags: 0
@@ -6198,6 +6198,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: conifer_macedonian_pine
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9735349342a17914da3b006f89366ffe,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9735349342a17914da3b006f89366ffe, type: 3}
 --- !u!4 &246139353 stripped
@@ -6815,7 +6820,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCam: {fileID: 10736944}
   orientation: {fileID: 1599756523}
-  moveSpeed: 300
+  moveSpeed: 250
   maxSpeed: 20
   grounded: 0
   whatIsGround:
@@ -8025,7 +8030,7 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 0.9339623, g: 0.8476498, b: 0.7533375, a: 1}
+  m_Color: {r: 0.8490566, g: 0.5919284, b: 0.4285333, a: 1}
   m_Intensity: 2.18
   m_Range: 5.219494
   m_SpotAngle: 51.824417
@@ -13591,7 +13596,7 @@ GameObject:
   - component: {fileID: 806591541}
   - component: {fileID: 806591542}
   m_Layer: 0
-  m_Name: Spot Light (1)
+  m_Name: flashlight1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13622,7 +13627,7 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 0.7746084, g: 0.800376, b: 0.9716981, a: 1}
+  m_Color: {r: 0.6650944, g: 0.7490196, b: 1, a: 1}
   m_Intensity: 92.01
   m_Range: 7.3148975
   m_SpotAngle: 49.855328
@@ -27899,7 +27904,7 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 0.9339623, g: 0.8476498, b: 0.7533375, a: 1}
+  m_Color: {r: 1, g: 0.82152563, b: 0.514151, a: 1}
   m_Intensity: 17.62
   m_Range: 6.5827484
   m_SpotAngle: 51.824417
@@ -34013,7 +34018,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 105.6
+  field of view: 90
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
