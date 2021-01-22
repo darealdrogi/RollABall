@@ -17,9 +17,15 @@
             <e p="PlayerMovement.cs" t="Include" />
           </e>
           <e p="HelloWorld.cs" t="Include" />
+          <e p="InputSystem Controls" t="Include">
+            <e p="CinemachinePOVExtension.cs" t="Include" />
+            <e p="InputManager.cs" t="Include" />
+            <e p="PlayerController.cs" t="Include" />
+            <e p="PlayerControls.cs" t="Include" />
+          </e>
           <e p="MouseLook.cs" t="Include" />
           <e p="PatrollingEnemyController.cs" t="Include" />
-          <e p="PlayerController.cs" t="Include" />
+          <e p="PlayerController0.cs" t="Include" />
           <e p="ScoringSystem.cs" t="Include" />
         </e>
       </e>

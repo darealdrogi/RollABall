@@ -7,7 +7,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController0 : MonoBehaviour
 {
     [SerializeField] private float m_speed = 1f;
 

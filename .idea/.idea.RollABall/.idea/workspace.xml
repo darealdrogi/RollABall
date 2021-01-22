@@ -11,13 +11,21 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Script/InputSystem Controls/CinemachinePOVExtension.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/InputSystem Controls/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../RollABall_CMS20 Lesson 7/RollABall_CMS20-develop/Assets/Scripts/PlayerController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/PlayerController0.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../RollABall/Assets/Scripts/PlayerController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/InputSystem Controls/InputManager.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Script/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/InputSystem Controls/InputManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/PlayerController0.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/InputSystem Controls/CinemachinePOVExtension.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/InputSystem Controls/PlayerController.cs" />
       </list>
     </option>
   </component>
@@ -61,7 +69,7 @@
       <option name="presentableId" value="Default" />
       <updated>1611331752698</updated>
       <workItem from="1611331769779" duration="718000" />
-      <workItem from="1611332915912" duration="1275000" />
+      <workItem from="1611332915912" duration="5999000" />
     </task>
     <servers />
   </component>
