@@ -21,6 +21,7 @@ public class PlayerController0 : MonoBehaviour
 
     public Text scoreText;
     public GameObject gameOverText;
+    public GameObject gameOverText2;
 
     private void Start()
     {
@@ -76,6 +77,8 @@ public class PlayerController0 : MonoBehaviour
         else if (other.gameObject.CompareTag("Enemy"))
         {
             UnityEngine.Debug.Log("GAME OVER!");
+            gameOverText2.SetActive(true);
+            StartCoroutine(waitALittleBit());
 
 
 #if UNITY_EDITOR
@@ -92,5 +95,8 @@ public class PlayerController0 : MonoBehaviour
 #endif
 
     }
+
+
+
 }
 
