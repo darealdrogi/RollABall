@@ -32,7 +32,7 @@
             ],
             "bindings": [
                 {
-                    "name": "WASD",
+                    "name": "Left Stick",
                     "id": "57f2a55f-c323-4eac-b355-afcd81800e56",
                     "path": "2DVector",
                     "interactions": "",
@@ -45,7 +45,7 @@
                 {
                     "name": "up",
                     "id": "b6567c6c-e837-4c3a-a8bf-4630ec07a691",
-                    "path": "<Keyboard>/w",
+                    "path": "<DualShockGamepad>/leftStick/up",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -56,7 +56,7 @@
                 {
                     "name": "down",
                     "id": "f5670a1f-d514-43ee-ae6e-10927a4dbc9a",
-                    "path": "<Keyboard>/s",
+                    "path": "<DualShockGamepad>/leftStick/down",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -67,7 +67,7 @@
                 {
                     "name": "left",
                     "id": "7539e906-e74b-4436-ae46-b608c74b30a9",
-                    "path": "<Keyboard>/a",
+                    "path": "<DualShockGamepad>/leftStick/left",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -78,6 +78,61 @@
                 {
                     "name": "right",
                     "id": "d7f4406b-7000-4b46-9754-0e0480dbb931",
+                    "path": "<DualShockGamepad>/leftStick/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "WASD",
+                    "id": "2a08f3fa-4147-4a71-a2d2-1b286bb1103b",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "4114c30d-571b-484e-8b35-8d9c1371ca97",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "c4c8b0c7-adc2-466b-afac-a52874f82501",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "bf69d9d6-9433-41db-976c-ff345ea03bad",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "dda4758a-38ac-4b4a-9eac-af8f415ad6dc",
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
@@ -89,7 +144,7 @@
                 {
                     "name": "",
                     "id": "dfdafe1b-43cf-42b2-b868-fb49e3132c28",
-                    "path": "<Keyboard>/space",
+                    "path": "<DualShockGamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -107,6 +162,61 @@
                     "action": "Look",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "Right Stick",
+                    "id": "b358135f-d622-4771-ac09-a2690498d45b",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "ScaleVector2(x=20,y=20)",
+                    "groups": "",
+                    "action": "Look",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "51082aa6-4645-48c2-a532-ac7c642e3d63",
+                    "path": "<DualShockGamepad>/rightStick/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Look",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "72976a24-9120-4b6e-8760-54575c74c2fc",
+                    "path": "<DualShockGamepad>/rightStick/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Look",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "4883d6ad-9c02-4e3c-8ac1-40581a698498",
+                    "path": "<DualShockGamepad>/rightStick/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Look",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "0e4acc35-5aa3-46d0-b4b9-748ae856bac9",
+                    "path": "<DualShockGamepad>/rightStick/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Look",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         }
