@@ -25,6 +25,7 @@ public class PlayerController0 : MonoBehaviour
 
     private void Start()
     {
+        //Cursor.visible = false;
         m_playerRigidbody = GetComponent<Rigidbody>();
 
         m_collectablesTotalCount = m_collectablesCounter = GameObject.FindGameObjectsWithTag("Collectable").Length;
