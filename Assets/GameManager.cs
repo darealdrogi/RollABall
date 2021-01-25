@@ -16,10 +16,13 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("Menu");
     }
 
-    public void ExitGame()
+    public void Exit()
     {
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.ExitPlaymode();//exits the playmode
-#endif
+
+        Application.Quit();
+
+//#if UNITY_EDITOR
+//        UnityEditor.EditorApplication.ExitPlaymode();//exits the playmode
+//#endif
     }
 }
